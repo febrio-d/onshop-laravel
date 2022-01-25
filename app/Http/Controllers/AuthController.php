@@ -11,7 +11,7 @@ class AuthController extends Controller
 {
     public function index()
     {
-        return view('index');
+        return view('index', ['title'=>'Home']);
     }
 
     public function signin()

@@ -23,6 +23,7 @@ Route::get('/signin', [AuthController::class, 'signin'])->middleware('guest');
 Route::post('/signin', [AuthController::class, 'storesignin']);
 Route::get('/signup', [AuthController::class, 'signup'])->middleware('guest');
 Route::post('/signup', [AuthController::class, 'storesignup']);
+Route::post('/signout', [AuthController::class, 'signout']);
 
 
 Route::get('/sellersignin', [SellerAuthController::class, 'index'])->middleware('guest');
@@ -30,5 +31,5 @@ Route::get('/sellersignup', [SellerAuthController::class, 'signup'])->middleware
 
 
 Route::get('/home', function () {
-	return view('home.index');
+	return view('home.index', [ 'title' => 'Home' ]);
 })->middleware('auth');
